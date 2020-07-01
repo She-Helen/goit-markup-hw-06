@@ -78,6 +78,7 @@
           </h1>
           <button
             type="button"
+            data-modal-open
             class="button hero__button"
             aria-label="Заказать услугу"
           >
@@ -560,6 +561,7 @@
           <form class="subscribe-form">
             <input
               type="email"
+              name="email"
               placeholder="E-mail"
               class="subscribe-form__input"
             />
@@ -573,9 +575,9 @@
         </div>
       </div>
     </footer>
-    <div class="backdrop">
+    <div data-modal class="backdrop is-hidden">
       <div class="modal">
-        <button type="button" class="close">
+        <button data-modal-close type="button" class="close">
           <svg class="close__icon" width="14" height="14">
             <use href="./images/symbol-defs.svg#close"></use>
           </svg>
@@ -625,8 +627,13 @@
               <span class="label__text">Комментарий</span>
             </label>
           </div>
-          <label class="label-checkbox">
-            <input type="checkbox" name="checkbox" id="" />
+          <input
+            type="checkbox"
+            name="checkbox"
+            id="checkbox"
+            class="checkbox"
+          />
+          <label for="checkbox" class="label-checkbox">
             Соглашаюсь с рассылкой и принимаю
             <a
               href="#"
@@ -641,5 +648,6 @@
         </form>
       </div>
     </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
