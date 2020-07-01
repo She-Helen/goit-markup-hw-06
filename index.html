@@ -507,7 +507,7 @@
         </div>
         <div class="socials-block">
           <!-- Призыв -->
-          <b class="subscribe">присоединяйтесь</b>
+          <b class="subscribe-title">присоединяйтесь</b>
           <ul class="list socials">
             <li class="socials__item">
               <a
@@ -556,22 +556,90 @@
           </ul>
         </div>
         <div class="subscribe-block">
-          <!-- Призыв -->
-          <b class="subscribe">Подпишитесь на рассылку</b>
-          <!-- Форма подписки (пока не размечаем) -->
-          <div class="form-box">
-            <form action="" method="post">
-              <input type="email" placeholder="E-mail" />
-            </form>
-            <button type="button" class="button subscribe__button">
+          <b class="subscribe-title">Подпишитесь на рассылку</b>
+          <form class="subscribe-form">
+            <input
+              type="email"
+              placeholder="E-mail"
+              class="subscribe-form__input"
+            />
+            <button type="submit" class="button subscribe-form__button">
               Подписаться
               <svg class="send-icon" width="24" height="24">
                 <use href="./images/symbol-defs.svg#send"></use>
               </svg>
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </footer>
+    <div class="backdrop">
+      <div class="modal">
+        <button type="button" class="close">
+          <svg class="close__icon" width="14" height="14">
+            <use href="./images/symbol-defs.svg#close"></use>
+          </svg>
+        </button>
+        <p class="modal__title">Оставьте свои данные, мы вам перезвоним</p>
+        <form class="form">
+          <div class="input-wrap">
+            <label class="label">
+              <input type="text" name="name" class="input" placeholder=" " />
+              <span class="label__text">Имя</span>
+              <svg class="label__icon" width="18" height="18">
+                <use href="./images/symbol-defs.svg#person"></use>
+              </svg>
+            </label>
+          </div>
+          <div class="input-wrap">
+            <label class="label">
+              <input
+                type="tel"
+                name="telephone"
+                class="input"
+                placeholder=" "
+              />
+              <span class="label__text">Телефон</span>
+              <svg class="label__icon" width="18" height="18">
+                <use href="./images/symbol-defs.svg#phone"></use>
+              </svg>
+            </label>
+          </div>
+          <div class="input-wrap">
+            <label class="label">
+              <input type="email" name="email" class="input" placeholder=" " />
+              <span class="label__text">Почта</span>
+              <svg class="label__icon" width="18" height="18">
+                <use href="./images/symbol-defs.svg#email"></use>
+              </svg>
+            </label>
+          </div>
+          <div class="comment-wrap">
+            <label class="label">
+              <textarea
+                type="text"
+                name="comment"
+                class="comment"
+                placeholder=" "
+              ></textarea>
+              <span class="label__text">Комментарий</span>
+            </label>
+          </div>
+          <label class="label-checkbox">
+            <input type="checkbox" name="checkbox" id="" />
+            Соглашаюсь с рассылкой и принимаю
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="policy-link"
+            >
+              Условия договора
+            </a>
+          </label>
+          <button type="submit" class="button submit-btn">Отправить</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

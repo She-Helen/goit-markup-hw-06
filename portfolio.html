@@ -314,7 +314,7 @@
         </div>
         <div class="socials-block">
           <!-- Призыв -->
-          <b class="subscribe">присоединяйтесь</b>
+          <b class="subscribe-title">присоединяйтесь</b>
           <ul class="list socials">
             <li class="socials__item">
               <a
@@ -363,20 +363,20 @@
           </ul>
         </div>
         <div class="subscribe-block">
-          <!-- Призыв -->
-          <b class="subscribe">Подпишитесь на рассылку</b>
-          <!-- Форма подписки (пока не размечаем) -->
-          <div class="form-box">
-            <form action="" method="post">
-              <input type="email" placeholder="E-mail" />
-            </form>
-            <button type="button" class="button subscribe__button">
+          <b class="subscribe-title">Подпишитесь на рассылку</b>
+          <form action="" method="post" class="subscribe-form">
+            <input
+              type="email"
+              placeholder="E-mail"
+              class="subscribe-form__input"
+            />
+            <button type="submit" class="button subscribe-form__button">
               Подписаться
               <svg class="send-icon" width="24" height="24">
                 <use href="./images/symbol-defs.svg#send"></use>
               </svg>
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </footer>
