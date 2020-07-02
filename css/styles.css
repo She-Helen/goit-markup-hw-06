@@ -603,16 +603,14 @@ footer {
 .backdrop {
   position: fixed;
   display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 
   opacity: 1;
 
-  transition: transform 250ms ease-in, opacity 250ms ease-in,
-    visibility 250ms ease-in;
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0 cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-hidden {
@@ -620,20 +618,24 @@ footer {
   visibility: hidden;
   pointer-events: none;
 
-  transform: scale(0, 0);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  transition: transform 250ms ease-in-out, opacity 250ms ease-in-out,
-    visibility 250ms ease-in-out;
+.is-hidden .modal {
+  transform: scale(0, 0);
 }
 
 .modal {
   position: relative;
+  margin: auto;
   width: 528px;
   padding: 40px;
   background-color: var(--primary-white-color);
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close {
@@ -679,6 +681,9 @@ footer {
 
 .input-wrap {
   margin-bottom: 28px;
+}
+.label {
+  display: block;
 }
 
 .label__icon {
@@ -786,35 +791,19 @@ footer {
   width: 16px;
   height: 15px;
 
-  background-image: url(../images/svg-icons/off.svg);
-  background-size: contain;
+  background-image: url(../images/svg-icons/off.svg),
+    url(../images/svg-icons/on.svg);
+  background-size: contain, 0;
   background-origin: content-box;
 }
 
 .checkbox:focus + .label-checkbox::before {
-  content: ' ';
-  display: inline-block;
-  vertical-align: text-top;
-  width: 16px;
-  height: 15px;
-
-  background-image: url(../images/svg-icons/off.svg);
-  background-size: contain;
-  background-origin: content-box;
   outline: 2px solid var(--accent-color);
 }
 
 .checkbox:checked + .label-checkbox::before,
 .checkbox:checked:focus + .label-checkbox::before {
-  content: ' ';
-  display: inline-block;
-  vertical-align: text-top;
-  width: 16px;
-  height: 15px;
-
-  background-image: url(../images/svg-icons/on.svg);
-  background-size: contain;
-  background-origin: content-box;
+  background-size: 0, contain;
   outline: 0;
 }
 
